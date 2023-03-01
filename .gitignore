@@ -1,0 +1,14 @@
+target/
+notes.md
+.vscode
+node_modules
+dist/
+pkg/
+
+# perf stuff
+flamegraph.svg
+perf.data*
+
+_scratch.egg
+/*.egg
+*.log
