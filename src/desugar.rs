@@ -309,7 +309,7 @@ fn flatten_actions(actions: &Vec<Action>, get_fresh: &mut Fresh) -> Vec<NormActi
     res
 }
 
-// In egglog, you are allowed to refer to variables
+// In eqlog, you are allowed to refer to variables
 // (which desugar to functions with no args)
 // without parenthesis.
 // This fixes that so normal translation is easier.

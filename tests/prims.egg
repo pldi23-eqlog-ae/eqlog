@@ -1,4 +1,4 @@
-; A nasty, imperative implementation of Prim's algorithm... in egglog!
+; A nasty, imperative implementation of Prim's algorithm... in eqlog!
 ; https://en.wikipedia.org/wiki/Prim%27s_algorithm
 
 ; Weighted edge (vertex 1 * vertex 2 * weight)

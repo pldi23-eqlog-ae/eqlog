@@ -1,4 +1,4 @@
-use egg_smol::*;
+use eqlog::*;
 
 fn test_program(program: &str, message: &str) {
     let mut egraph = EGraph::default();

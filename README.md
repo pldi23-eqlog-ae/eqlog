@@ -1,28 +1,4 @@
-# egg-smol
-
-[web demo](https://www.mwillsey.com/egg-smol/)
-
-This is the working repo for egg-smol.
-
-## Background
-
-See this presentation for background information:
-
-https://youtu.be/dbgZJyw3hnk?t=3983
-
-with this paper to go along:
-
-https://effect.systems/doc/pldi-2022-egraphs/abstract.pdf
-
-Also see papers about egglog.
-
-See also the Python binding, which provides a bit more documentation:
-https://egg-smol-python.readthedocs.io/en/latest/
-
-## Chat
-
-There is a Zulip chat about egg-smol here:
-https://egraphs.zulipchat.com/#narrow/stream/328979-Implementation/topic/Eggsmol
+# eqlog
 
 ## Prerequisites & compilation
 
@@ -30,7 +6,6 @@ https://egraphs.zulipchat.com/#narrow/stream/328979-Implementation/topic/Eggsmol
 apt-get install make cargo
 make all
 ```
-
 
 ## Usage
 
@@ -317,7 +292,7 @@ where sorts are:
 
 ### Union
 
-The underlying data structure maintained by egg-smol is an e-graph. That means that specific values can be unified to be equivalent. To extract a value, use `extract` and it will extract the cheapest option according to the costs.
+The underlying data structure maintained by eqlog is an e-graph. That means that specific values can be unified to be equivalent. To extract a value, use `extract` and it will extract the cheapest option according to the costs.
 
 ```
 (datatype Math (Num i64))
@@ -341,7 +316,7 @@ Union only works on variants, not sorts.
     <Expr>
 ```
 
-These are conditions used in check and other commands. There is no boolean type in egg-smol. Instead, boolean are modelled morally as `Option<Unit>`, so if something is true, it is `Some<()>`. If something is false, it does not match and is `None`.
+These are conditions used in check and other commands. There is no boolean type in eqlog. Instead, boolean are modelled morally as `Option<Unit>`, so if something is true, it is `Some<()>`. If something is false, it does not match and is `None`.
 
 ### Expressions
 

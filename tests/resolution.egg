@@ -9,7 +9,7 @@
 ; and subsumption.
 ; These systems use sophisticated term indexing to find matching clauses
 
-; A natural question is whether egglog's saturation and term indexing gives
+; A natural question is whether eqlog's saturation and term indexing gives
 ; a leg up towards building one of these systems. A programmable one even,
 ; with built in support for equality reasoning
 
@@ -59,7 +59,7 @@
 ; This is kind of interesting actually.
 ; Looks a bit like equation solving
 
-; The following is not valid egglog but could be?
+; The following is not valid eqlog but could be?
 ;(rewrite p True    
 ;    :when ((= True (or p False))))
 

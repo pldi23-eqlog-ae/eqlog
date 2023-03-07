@@ -18,8 +18,8 @@
       lst
       (append head (cdr tail))))
 
-(define-runtime-path egglog-binary
-  "target/release/egg-smol")
+(define-runtime-path eqlog-binary
+  "target/release/eqlog")
 
 ;; timeout in seconds
 (define TIMEOUT 5)
@@ -37,16 +37,16 @@
 (define (desired-error? program)
   (displayln (format "Trying program of size ~a" (length program)))
   (flush-output)
-  (define-values (egglog-process egglog-output egglog-in err)
-    (subprocess (current-output-port) #f #f egglog-binary))
+  (define-values (eqlog-process eqlog-output eqlog-in err)
+    (subprocess (current-output-port) #f #f eqlog-binary))
 
   (for ([line program])
-    (writeln (desugar line) egglog-in))
-  (close-output-port egglog-in)
+    (writeln (desugar line) eqlog-in))
+  (close-output-port eqlog-in)
 
-  (when (not (sync/timeout TIMEOUT egglog-process))
+  (when (not (sync/timeout TIMEOUT eqlog-process))
     (displayln "Timed out"))
-  (subprocess-kill egglog-process #t)
+  (subprocess-kill eqlog-process #t)
   (displayln "checking output")
   (flush-output)
   (define err-str (read-string 800 err))
@@ -116,12 +116,12 @@
   (first (sort programs (lambda (a b) (< (length a) (length b))))))
 
 (define (minimize port-in port-out)
-  (define egglog (read-lines port-in))
+  (define eqlog (read-lines port-in))
 
-  (when (not (desired-error? egglog))
+  (when (not (desired-error? eqlog))
     (error "Program did not original have error"))
 
-  (define minimized (min-iterations egglog))
+  (define minimized (min-iterations eqlog))
   (for ([line minimized])
     (writeln (desugar line) port-out)))
 

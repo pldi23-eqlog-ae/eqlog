@@ -1,6 +1,6 @@
 [package]
 edition = "2021"
-name = "egg-smol"
+name = "eqlog"
 version = "0.1.0"
 
 [workspace]
@@ -20,8 +20,6 @@ log = "0.4"
 rustc-hash = "1.1"
 symbol_table = {git = "https://github.com/mwillsey/symbol_table", rev = "acddcf8938d1b4ed2fce048c9d83c30203d404b9", features = ["global"]}
 thiserror = "1"
-# symbol_table = { version = "0.2", features = ["global"] }
-# symbol_table = { path = "../symbol_table", features = ["global"] }
 lazy_static = "1.4"
 num-integer = "0.1.45"
 num-rational = "0.4.1"
